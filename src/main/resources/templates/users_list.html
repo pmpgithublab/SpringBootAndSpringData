@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:fm="http://www.w3.org/1999/xhtml"
+      xmlns:spring="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8"/>
+    <!--    <title>Welcome</title>-->
+    <link rel="stylesheet" type="text/css" th:href="@{/table.css}" href="../static/table.css"/>
+</head>
+<body>
+<div align="center">
+    <h1 th:text="#{users.list}"></h1>
+    <br>
+
+    <table class="blueTable">
+        <thead>
+        <tr>
+            <td th:text="#{user.title.id}">ID</td>
+            <td th:text="#{user.title.firstName}">First name</td>
+            <td th:text="#{user.title.lastName}">Last name</td>
+            <td th:text="#{user.title.email}">E-mail</td>
+            <td th:text="#{user.title.role}">Role</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">1</td>
+            <td th:text="__${#locale}__=='ua' ? ${user.firstNameUk} : ${user.firstName}">Adam</td>
+            <td th:text="__${#locale}__=='ua' ? ${user.lastNameUk} : ${user.lastName}">-</td>
+            <td th:text="${user.email}">adam@zero</td>
+            <td th:text="${user.role}">user</td>
+        </tr>
+        </tbody>
+    </table>
+<!--    <p th:text="${#locale}"/>-->
+</div>
+
+</body>
+</html>

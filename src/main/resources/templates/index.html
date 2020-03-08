@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:fm="http://www.w3.org/1999/xhtml"
+      xmlns:spring="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8"/>
+    <!--    <title>Welcome</title>-->
+    <link rel="stylesheet" type="text/css" th:href="@{/page.css}" href="../static/page.css"/>
+</head>
+<body>
+<div align="center">
+    <h1 th:text="#{welcome.message}"></h1>
+    <br>
+    <a class="anch" href="?localeCode=en">Eng</a>
+    <a href="?localeCode=ua">Укр</a>
+    <br>
+    <br>
+    <form action="/showUsers" method="post">
+        <input class="button" type="submit" name="showUsers" th:value="#{show.users}"/>
+    </form>
+</div>
+</body>
+</html>
